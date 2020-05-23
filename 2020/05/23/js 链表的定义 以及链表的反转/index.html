@@ -116,40 +116,18 @@
   <div id="content-inner">
     
 <article id="post">
-  <div class="post-page-title"  style="background-color:#26a639;background-image:url(/images/random/vateral-3.png)" >
-  <h2>关于使用githup hexo 搭建自己的githup博客</h2>
+  <div class="post-page-title"  style="background-color:#26a639;background-image:url(/images/random/vateral-1.png)" >
+  <h2>js 链表的定义 以及链表的反转</h2>
     
-  <p>作者:wz &nbsp&nbsp 发布于:<time datetime="2020-04-30T07:49:33.529Z">
-          2020-04-30
+  <p>作者:wz &nbsp&nbsp 发布于:<time datetime="2020-05-23T10:30:02.190Z">
+          2020-05-23
     </time>
   </p>
     
   </div>
   <div class="post-page-content">
-  <p><strong>关于使用githup hexo csdn中的Markdown编辑器发布搭建自己的githup博客*</strong></p>
-<p>先下载git<br>下载安装很多方法， 这里用了迅雷下载，<br>个人觉得挺快的<a href="https://github.com/git-for-windows/git/releases/download/v2.19.0.windows.1/Git-2.19.0-64-bit.exe" target="_blank" rel="noopener">https://github.com/git-for-windows/git/releases/download/v2.19.0.windows.1/Git-2.19.0-64-bit.exe</a><br><img src="https://img-blog.csdnimg.cn/20200430145450490.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3d6d3p3ejU1NQ==,size_16,color_FFFFFF,t_70" alt=""></p>
-<p>安装好git  然后开始安装hexo</p>
-<p>找一个盘符安装  创建一个hexo文件下  打开终端安装  记住路径待会有用</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-cli -g  <span class="comment">//全局的</span></span><br><span class="line">hexo init hexo</span><br><span class="line">cd hexo</span><br><span class="line">npm install</span><br><span class="line">hexo server<span class="comment">//端口是4000  你在编辑器终端如果打开了，在git bash  就会报错，必须关掉一个</span></span><br></pre></td></tr></table></figure>
+  <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//定义链表的方法</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ListNode</span> </span>&#123;</span><br><span class="line">				<span class="keyword">constructor</span>(val)&#123;</span><br><span class="line">					<span class="keyword">this</span>.val =val</span><br><span class="line">					<span class="keyword">this</span>.next=<span class="literal">null</span></span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">			</span><br><span class="line">			<span class="keyword">let</span> node1 = <span class="keyword">new</span> ListNode(<span class="number">1</span>)</span><br><span class="line">			<span class="keyword">let</span> node2 = <span class="keyword">new</span> ListNode(<span class="number">2</span>)</span><br><span class="line">			<span class="keyword">let</span> node3 = <span class="keyword">new</span> ListNode(<span class="number">3</span>)</span><br><span class="line">			node1.next =node2</span><br><span class="line">			node2.next =node3</span><br><span class="line"><span class="comment">//反转链表</span></span><br><span class="line"><span class="built_in">console</span>.log(node1)</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">reverse</span>(<span class="params">head</span>)</span>&#123;</span><br><span class="line">				<span class="keyword">let</span>  dummy=head;</span><br><span class="line">				<span class="keyword">let</span> tmp=dummy;</span><br><span class="line">				</span><br><span class="line">				<span class="keyword">while</span>(head !==<span class="literal">null</span>&amp;&amp;head.next !==<span class="literal">null</span>)&#123;</span><br><span class="line">					dummy = head.next</span><br><span class="line">					head.next =dummy.next</span><br><span class="line">					dummy.next=tmp</span><br><span class="line">					tmp=dummy</span><br><span class="line"></span><br><span class="line">				&#125;</span><br><span class="line">				<span class="keyword">return</span> dummy</span><br><span class="line">			&#125;</span><br><span class="line">			</span><br><span class="line">				<span class="built_in">console</span>.log(reverse(node1))</span><br></pre></td></tr></table></figure>
 
-
-
-<p>接下来点击终端的<a href="http://localhost:4000/" target="_blank" rel="noopener">http://localhost:4000/</a><br><img src="https://img-blog.csdnimg.cn/20200430152653845.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3d6d3p3ejU1NQ==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
-<p>登录githup  建一个仓库  epository name 要写成这样的格式username.github.io,例如我用户名创建时wz.github.io<br>点击create repository就创建好了。<br>接下你可以测试一下，点击create new file.,输入index.html，输入<h1> Hello Github </h1>.然后提交。复制你的链接用户名.github.io，然后转到该页面上去。如果显示出Hello Github，证明你创建的已经成功。如果显示404（所请求的页面不存在或已被删除!），不要着急，问题出在Github服务器上，估计是翻墙什么的缘故吧，会卡一些，你创建的文件不会立即上传过去，要做的就是好好睡一觉明天在搭（<br>上面的解决方法是当时搭建的时候自己感觉的，其实不是的 应该是访问时再加上https://，如(<a href="https://bealright.github.io/)，这样才能访问，上面的也就不删除了，也是当时的感受" target="_blank" rel="noopener">https://bealright.github.io/)，这样才能访问，上面的也就不删除了，也是当时的感受</a></p>
-<p>git和你的githup连接，有问题可以看看别的帖子</p>
-<p>$ git config –global user.name “xxx”   //你的githup账号名<br>$ git config –global user.email “<a href="mailto:xxx@xx.com">xxx@xx.com</a>“   //你用哪个邮箱注册的，  等会还要输入密码的<br>$ ssh-keygen -t rsa // 创建密钥  打开c盘的用户下的.ssh文件下id_rsa.pub看见一串密钥，复制密钥</p>
-<p><img src="https://img-blog.csdnimg.cn/20200430153030490.png" alt="在这里插入图片描述"><br>在githup下的setting中<br><img src="https://img-blog.csdnimg.cn/20200430153217379.png" alt="在这里插入图片描述"><br>选择SSH and GPG keys<br><img src="https://img-blog.csdnimg.cn/20200430153322456.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3d6d3p3ejU1NQ==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/20200430153442420.png" alt="在这里插入图片描述"></p>
-<p>粘贴密钥</p>
-<p>ssh -T <a href="mailto:git@github.com">git@github.com</a>测试是否成功</p>
-<p> ssh-keygen -t rsa -C “<a href="mailto:xxx@qq.com">xxx@qq.com</a>“  //注册githup的邮箱<br> cat ~/.ssh/id_rsa.pub</p>
-<p>remote origin already exists.解决方法 git remote rm origin</p>
-<p>git remote add origin <a href="https://github.com/wzwuzhe/wzwuzhe.github.io.git" target="_blank" rel="noopener">https://github.com/wzwuzhe/wzwuzhe.github.io.git</a></p>
-<p>1.先查看远程仓库地址：git remote -v，如果地址是https，那肯定需要密码啊！<br>2.如果是https，那就改为ssh: git remote set-url origin <a href="mailto:git@github.com">git@github.com</a>:xxxxxxx/xxx.git<br>3.改完提交就不要密码了；</p>
-<p>ssh: git remote set-url origin <a href="mailto:git@github.com">git@github.com</a>:xxxxxxx/xxx.git</p>
-<p>Username for ‘<a href="https://github.com&#39;" target="_blank" rel="noopener">https://github.com&#39;</a>: 输入的是github上的邮箱账号, 而不是github中设置的username, 这是个巨坑!!!<br>Password for ‘https://你的github邮箱@github.com’: 输入github的登录密码,点击enter键即可.</p>
-<p>git add .<br>git commit -am “”<br>git commit origin hexo</p>
-<p>将hexo和GitHub关联起来      </p>
-<p>之后就可以看见我们的博客啦</p>
 
   </div>
   <!--评论块-->
@@ -159,15 +137,11 @@
 <nav class="post-nav">
   <!-- Prev Nav -->
     
-  <a href="/2020/05/06/前端目标，在知识的海洋不迷茫/" id="post_nav-newer" class="post-nav-content prev-content">
-      新篇
-  </a>
-    
 
 
   <!-- Next Nav -->
     
-  <a href="/2020/04/30/hello-world/" id="post_nav-older" class="post-nav-content next-content">
+  <a href="/2020/05/23/利用二分法查找数组中的元素/" id="post_nav-older" class="post-nav-content next-content">
       旧篇
   </a>
     
@@ -175,7 +149,7 @@
 <div class="post-toc-btn"><i class="material-icons">format_list_numbered</i></div>
 <div class="post-toc-none"><p>(无)</p></div>
 <div class="post-toc-box">
-    <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#"><span class="post-toc-number">1.</span> <span class="post-toc-text"> Hello Github </span></a></li></ol>
+    
 </div>
 <!--<div class="post-back"><i class="material-icons">arrow_back</i></div>-->
 <script type="text/javascript">
