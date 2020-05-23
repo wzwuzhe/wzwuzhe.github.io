@@ -116,29 +116,19 @@
   <div id="content-inner">
     
 <article id="post">
-  <div class="post-page-title"  style="background-color:#26a639;background-image:url(/images/random/vateral-1.png)" >
-  <h2>Hello World</h2>
+  <div class="post-page-title"  style="background-color:#26a639;background-image:url(/images/random/vateral-4.png)" >
+  <h2>利用二分法查找数组中的元素</h2>
     
-  <p>作者:wz &nbsp&nbsp 发布于:<time datetime="2020-04-30T01:28:52.938Z">
-          2020-04-30
+  <p>作者:wz &nbsp&nbsp 发布于:<time datetime="2020-05-23T09:13:38.625Z">
+          2020-05-23
     </time>
   </p>
     
   </div>
   <div class="post-page-content">
-  <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
+  <p>复习之前的知识，想起二分法查找出想要的元素,思想是<br>一个数组一份为二，找到左边的和你想要比较的数字比较然后如果刚好的就return如果没有就比较当前的数字是大还是小  如果大的化，就从之前的那个数字起组成一个新的数组然后在一分为二比，就从左边组成一个新的数组接着往下比；如果小的化，就从右边组成一个新的数组接着往下比，直到return true或者false  为止</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> arr=[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>]</span><br><span class="line"><span class="keyword">let</span> t=<span class="number">8</span></span><br><span class="line"><span class="built_in">console</span>.log(Search(arr,t))</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Search</span>(<span class="params">array,n</span>)</span>&#123;</span><br><span class="line"><span class="keyword">let</span> left=<span class="number">0</span>;</span><br><span class="line"><span class="keyword">let</span> right=array.length<span class="number">-1</span></span><br><span class="line"><span class="keyword">while</span> (left&lt;=right)&#123;</span><br><span class="line"><span class="keyword">let</span> i=<span class="built_in">parseInt</span>((left+right)/<span class="number">2</span>)</span><br><span class="line"><span class="keyword">if</span>(array[i]===n)&#123;</span><br><span class="line"><span class="keyword">return</span> <span class="literal">true</span> </span><br><span class="line">&#125;<span class="keyword">else</span> <span class="keyword">if</span>(array[i]&lt;n)&#123;</span><br><span class="line">left= i+<span class="number">1</span></span><br><span class="line">&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">right= i<span class="number">-1</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">return</span> <span class="literal">false</span></span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//写一个变种的二分法查找</span></span><br><span class="line"><span class="keyword">let</span>  arr1=[</span><br><span class="line">	[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>],</span><br><span class="line">	[<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>],</span><br><span class="line">	[<span class="number">7</span>,<span class="number">8</span>,<span class="number">9</span>]</span><br><span class="line">]</span><br><span class="line"><span class="comment">//在arr1中找出7在不在这个arr1中</span></span><br><span class="line"><span class="built_in">console</span>.log(searchs(arr1,<span class="number">7</span>))</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">searchs</span>(<span class="params">arr,t</span>)</span>&#123;</span><br><span class="line"><span class="keyword">let</span> m=arr.length;</span><br><span class="line"><span class="keyword">let</span> n= arr[<span class="number">0</span>].length</span><br><span class="line"><span class="keyword">let</span> l=<span class="number">0</span>;</span><br><span class="line"><span class="keyword">let</span> r=arr[<span class="number">0</span>].length<span class="number">-1</span></span><br><span class="line"><span class="keyword">while</span>(l&lt;m&amp;&amp;r&gt;=<span class="number">0</span>)&#123;</span><br><span class="line"><span class="keyword">if</span>(arr[l][r]===t)&#123;</span><br><span class="line"><span class="keyword">return</span> <span class="literal">true</span> </span><br><span class="line">&#125;<span class="keyword">else</span> <span class="keyword">if</span>(arr[l][r]&lt;t)&#123;</span><br><span class="line">l+=<span class="number">1</span></span><br><span class="line">&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">r-=<span class="number">1</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">return</span> <span class="literal">false</span> </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
 
   </div>
   <!--评论块-->
@@ -148,19 +138,19 @@
 <nav class="post-nav">
   <!-- Prev Nav -->
     
-  <a href="/2020/04/30/关于使用githup hexo 搭建自己的githup博客/" id="post_nav-newer" class="post-nav-content prev-content">
-      新篇
-  </a>
-    
 
 
   <!-- Next Nav -->
+    
+  <a href="/2020/05/21/js  语音读取txt文章内容/" id="post_nav-older" class="post-nav-content next-content">
+      旧篇
+  </a>
     
 </nav>
 <div class="post-toc-btn"><i class="material-icons">format_list_numbered</i></div>
 <div class="post-toc-none"><p>(无)</p></div>
 <div class="post-toc-box">
-    <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Quick-Start"><span class="post-toc-number">1.</span> <span class="post-toc-text">Quick Start</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Create-a-new-post"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">Create a new post</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Run-server"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">Run server</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Generate-static-files"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">Generate static files</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Deploy-to-remote-sites"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">Deploy to remote sites</span></a></li></ol></li></ol>
+    
 </div>
 <!--<div class="post-back"><i class="material-icons">arrow_back</i></div>-->
 <script type="text/javascript">
